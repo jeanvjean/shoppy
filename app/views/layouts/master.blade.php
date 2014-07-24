@@ -12,7 +12,12 @@
 	<div class="jumbotron">
 		<h1>Welcome to The Shop</h1>
 		<h3>Please browse around</h3>
-		<button class="btn-lg btn-primary">Sign Up To Purchase</button>
+		<a href="{{ URL::to('/usercreate') }}"><button class="btn-lg btn-primary">Sign Up To Purchase</button></a>
+		@if (Auth::guest())
+			<a href="{{ URL::to('/login') }}"><button class="btn-lg btn-primary pull-right">Log In</button></a>
+		@else 
+			<a href="{{ URL::to('/logout') }}"><button class="btn-lg btn-primary pull-right">Log Out</button></a>
+		@endif
 	</div>
 	@yield('content')	
 </div>

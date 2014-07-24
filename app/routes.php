@@ -16,3 +16,11 @@ Route::get('/', function()
 	return View::make('hello');
 });
 Route::get('/products', 'ProductsController@index');
+
+Route::get('/usercreate', 'UsersController@create');
+Route::post('/usercreate', 'UsersController@store');
+Route::resource('/users', 'UsersController', ['only' => ['create', 'store', 'destroy', 'show']]);
+
+Route::get('/login', 'SessionsController@create');
+Route::get('/logout', 'SessionsController@destroy');
+Route::resource('/sessions', 'SessionsController', ['only' => ['store', 'destroy', 'create']]);
