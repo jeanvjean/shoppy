@@ -2,7 +2,12 @@
 
 @section('content')
 	
-<div class="">
+	@if (!Auth::guest())
+		<h1>Welcome, {{ $loggedInUser->email }}</h1>
+	@else 
+		<h1>Please Login or Signup!</h1>
+	@endif
+<div>
 	@foreach ($products as $product)
 		<ul class="pull-left col-lg-4 list-group">		
 			<li class="list-group-item"><h3><strong>{{ $product->title }}</strong></h3></li>

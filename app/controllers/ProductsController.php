@@ -12,7 +12,9 @@ class ProductsController extends \BaseController {
 	{
 		$products = Product::all();
 
-		return View::make('products.index', compact('products'));
+		$loggedInUser = Auth::user();
+
+		return View::make('products.index', compact('products', 'loggedInUser'));
 	}
 
 	/**

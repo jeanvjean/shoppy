@@ -27,7 +27,14 @@ class UsersController extends \BaseController {
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
 
-		return Redirect::to('/products');
+		$input = Input::only('email', 'password');
+
+		if (Auth::attempt($input)) {
+			return Redirect::to('/products');
+		}	
+		else {
+			return Redirect::to('/');
+		}
 	}
 
 
