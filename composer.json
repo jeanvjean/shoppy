@@ -5,10 +5,10 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"Way/Generators": "2.*"
 	},
 	"require-dev": {
-		"fzaninotto/faker": "1.*"
+		"fzaninotto/faker": "1.*",
+		"Way/Generators": "2.*"
 	},
 
 	"autoload": {

@@ -3,7 +3,7 @@
 @section('content')
 	
 	@if (!Auth::guest())
-		<h1>Welcome, {{ $loggedInUser->email }} you have a cart {{ $loggedInUser->cart }}</h1>
+		<h1>Welcome, {{ $loggedInUser->email }} you have a cart.</h1>
 	@else 
 		<h1>Please Login or Signup!</h1>
 	@endif

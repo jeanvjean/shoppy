@@ -23,7 +23,7 @@ class SessionsController extends \BaseController {
 		$input = Input::only('email', 'password');
 
 		if (Auth::attempt($input)) {
-			return Redirect::intended('/');
+			return Redirect::intended('/products');
 		}
 		else {
 			dd($input);

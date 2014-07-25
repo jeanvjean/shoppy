@@ -18,8 +18,6 @@ class CreateProductsTable extends Migration {
 			$table->text('title');
 			$table->text('description');
 			$table->decimal('price', 5, 2);
-			$table->integer('cart_id')->unsigned()->index();
-			$table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

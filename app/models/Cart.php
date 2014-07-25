@@ -6,6 +6,6 @@ class Cart extends \Eloquent {
 		return $this->hasOne('User');
 	}
 	public function Product() {
-		return $this->hasMany('Product');
+		return $this->belongsToMany('Product');
 	}
 }
