@@ -27,6 +27,11 @@ class UsersController extends \BaseController {
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
 
+		$cart = new Cart;
+
+		$cart->user_id = $user->id;
+		$cart->save();
+
 		$input = Input::only('email', 'password');
 
 		if (Auth::attempt($input)) {

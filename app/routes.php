@@ -24,3 +24,6 @@ Route::resource('/users', 'UsersController', ['only' => ['create', 'store', 'des
 Route::get('/login', 'SessionsController@create');
 Route::get('/logout', 'SessionsController@destroy');
 Route::resource('/sessions', 'SessionsController', ['only' => ['store', 'destroy', 'create']]);
+
+Route::get('/{id}/cart', 'CartsController@index');
+Route::get('{id}/add', 'CartsController@addProductToCart');

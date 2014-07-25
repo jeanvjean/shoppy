@@ -3,7 +3,7 @@
 @section('content')
 	
 	@if (!Auth::guest())
-		<h1>Welcome, {{ $loggedInUser->email }}</h1>
+		<h1>Welcome, {{ $loggedInUser->email }} you have a cart {{ $loggedInUser->cart }}</h1>
 	@else 
 		<h1>Please Login or Signup!</h1>
 	@endif
@@ -15,7 +15,7 @@
 			<li class="list-group-item">${{ $product->price }}</li>
 			<li class="list-group-item text-center">
 				<div class="btn-group">			
-					<button class="btn btn-success">Add To Cart</button>
+					<button class="btn btn-success">{{ HTML::linkAction('CartsController@addProductToCart', 'Add To Cart', array($product->id)) }}</button>
 					<button class="btn btn-danger">Product Info</button>
 				</div>		
 			</li>	
